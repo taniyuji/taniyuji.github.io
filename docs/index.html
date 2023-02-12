@@ -23,7 +23,7 @@
           <div class="form-group">
             <input type="text" class="form-control form-control-sm" id="exampleInput1">
           </div>
-          <button type="button" class="btn btn-outline-success btn-sm" onclick="unitySendMessage()">Unityに送信</button>
+          <button type="button" class="btn btn-outline-success btn-sm" onclick="unitySendMessage()">messengerに移動</button>
         </div>
       </div>
     </div>
@@ -41,12 +41,20 @@
       productVersion: "0.1",
     }).then(x => unityInstance = x);
   </script>
-  
   <script>
-    document.addEventListener('click', function (e) 
-    {
-      <a href="messenger.html">messengerへ移動</a>
+    document.addEventListener('click', function (e) {
+      if (e.target.id == "unity-canvas") {
+        // Clicked on canvas 
+        unityInstance.SendMessage("Button", "FocusCanvas", "1");
+      } else {
+        // Clicked outside of canvas 
+        unityInstance.SendMessage("Button", "FocusCanvas", "0");
+      }
     });
+    function unitySendMessage(params) {
+      <a href="messenger.html"> messengerに移動 </a>;
+    }
+    
   </script>
 </body>
 
