@@ -41,19 +41,12 @@
       productVersion: "0.1",
     }).then(x => unityInstance = x);
   </script>
+  
   <script>
-    document.addEventListener('click', function (e) {
-      if (e.target.id == "unity-canvas") {
-        // Clicked on canvas 
-        unityInstance.SendMessage("Button", "FocusCanvas", "1");
-      } else {
-        // Clicked outside of canvas 
-        unityInstance.SendMessage("Button", "FocusCanvas", "0");
-      }
+    document.addEventListener('click', function (e) 
+    {
+      <a href="messenger.html">messengerへ移動</a>
     });
-    function unitySendMessage(params) {
-      unityInstance.SendMessage("Button", "SetInputFieldText", $("#exampleInput1").val());
-    }
   </script>
 </body>
 
